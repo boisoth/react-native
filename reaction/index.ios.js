@@ -1,46 +1,47 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- */
 'use strict';
-import React, {
+import React,{
   AppRegistry,
   Component,
   StyleSheet,
   Text,
-  View
+  View,
+  Image
 } from 'react-native';
 
-class reaction extends Component {
-  render() {
+class ImageResource extends Component {
+  render(){
+    let pic = {
+      uri: 'https://s-media-cache-ak0.pinimg.com/236x/ed/d7/a8/edd7a88bfd09eed359eea17f2a0467dd.jpg'
+    }
+    return(
+      <Image source={pic} style={{width:200, height:200}} />
+    )
+  }
+}
+
+// Main App
+class MainApp extends Component {
+  render(){
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+        <Text style={styles.welcome}>Welcome!</Text>
+        <ImageResource />
       </View>
     );
   }
 }
-
+// Global Styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#FFFFFF',
   },
   welcome: {
-    fontSize: 20,
+    fontSize: 30,
     textAlign: 'center',
-    margin: 10,
+    margin: 0,
   },
   instructions: {
     textAlign: 'center',
@@ -49,4 +50,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('reaction', () => reaction);
+AppRegistry.registerComponent('reaction',()=> MainApp);
